@@ -1,4 +1,5 @@
 package com.samples.s01springcoredi;
+import org.springframework.context.support.AbstractApplicationContext;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -6,7 +7,7 @@ public class App
 {
     public static void main( String[] args )
     {
-       ClassPathXmlApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/s01springcoredi/SpringConfig.xml");
+//       ClassPathXmlApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/s01springcoredi/SpringConfig.xml");
        
  //      Employee emp = (Employee) springContainer.getBean("emp"); 
    //    System.out.println(emp);
@@ -22,8 +23,16 @@ public class App
 //     CarDealer dealer = (CarDealer) springContainer.getBean("cardealer");
 //     System.out.println(dealer);
      
-     Customer customer = (Customer) springContainer.getBean("customer");
-     System.out.println(customer);
+    // Customer customer = (Customer) springContainer.getBean("customer");
+     //System.out.println(customer);
+
+     //  ShoppingCart shoppingcart=(ShoppingCart) springContainer.getBean("shoppingcart");
+      // System.out.println(shoppingcart);
+
+   	AbstractApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");
+   	Patient patient = (Patient) springContainer.getBean("patient");
+   	System.out.println(patient);
+   	springContainer.registerShutdownHook();
 
        
     }

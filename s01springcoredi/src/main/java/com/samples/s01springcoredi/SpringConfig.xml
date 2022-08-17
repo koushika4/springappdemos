@@ -48,6 +48,12 @@
 			</map>
 		</property>
 	</bean>
-
-
+		<bean name="item" class="com.samples.s01springcoredi.Item" p:id="1" p:name="shop" p:price="50" p:quantity="5" />
+	
+	<bean name="shoppingcart" class="com.samples.s01springcoredi.ShoppingCart" p:item-ref="item" />
+	
+	<bean name="patient" class="com.samples.s01springcoredi.Patient"
+		p:id="11" init-method="methodOne" destroy-method="methodTwo" />
+<bean
+	class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
 </beans>
